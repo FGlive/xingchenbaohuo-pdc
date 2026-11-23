@@ -21,6 +21,6 @@ ENV PORT=8590
 # 容器内监听全部网卡，宿主机 docker port 映射才能访问（裸 node 直跑默认 127.0.0.1）
 ENV TA_HOST=0.0.0.0
 EXPOSE 8590
-VOLUME ["/app/data"]
+# VOLUME ["/app/data"]   # Railway 不支持 Dockerfile VOLUME，改用平台 Volumes
 
 CMD ["node", "server.js"]
